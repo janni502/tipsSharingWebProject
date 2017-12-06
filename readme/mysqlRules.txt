@@ -1,0 +1,11 @@
+1.Change the password for mysql in mac terminal
+ To reset the root password:
+   1. stop Mysql server: sudo /usr/local/mysql/support-files/mysql.server stop
+   2. enter the safe mode : sudo mysql_saft -- skip-grant -tables
+   3. open a new terminal and enter mysql with ramdom password : mysql -u root -p
+   4. swith to mysql : use mysql
+   5. check the user table : describe user
+   6. find the password's describe name, some are named 'Password' but some are 'authentication_string'. remember this.
+   7. :UPDATE mysql.user SET authentication_string=PASSWORD('123456') where User='root'; //change the pass word to'12345'for root
+   8. : flush privileges;
+   9. :sudo /usr/local/mysql/support-files/mysql.server start
