@@ -5,7 +5,7 @@ function db_connect(){
 	try {
 
 		$result = mysqli_connect("127.0.0.1","root","981440","tips4u");
-		#mysqli_select_db('tips4u');
+		#mysqli_select_db("tips4u");
 	} catch (Exception $e) {
 		echo $e->message;
 		exit;
@@ -13,6 +13,7 @@ function db_connect(){
 	if (!$result) {
 		return false;
 	}
+    return $result; // don't forget to return the connection result.
 }
 
 function get_writer_record($username){
