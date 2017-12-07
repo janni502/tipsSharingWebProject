@@ -50,7 +50,8 @@
 		echo '<br /><p class="byline">';
 		//echo $w[full_name].', ';
 		echo $w['full_name'],', '; 
-		echo date('M d, H: i', $story['modified']);
+       // echo date_default_timezone_set('M d, H: i', $story['modified']);
+		//echo date('M d, H: i', $story['modified']);
 		echo '</p>';
 
 		// main text
