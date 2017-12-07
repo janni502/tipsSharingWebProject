@@ -9,3 +9,8 @@
    7. :UPDATE mysql.user SET authentication_string=PASSWORD('123456') where User='root'; //change the pass word to'12345'for root
    8. : flush privileges;
    9. :sudo /usr/local/mysql/support-files/mysql.server start
+
+
+When connect with databse from php, if the error say: mysql_connect can not find the file or directy .change the :mysql_connect("localhos","root","password")
+to : mysql_connect("127.0.0.1","root","password")
+
