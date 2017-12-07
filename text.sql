@@ -1,5 +1,47 @@
 
-// cd /opt/lampp/htdocs/juan/436/
+-- cd /opt/lampp/htdocs/juan/436/
+DROP table writers;
+DROP table stories;
+DROP table pages;
+DROP table writer_permissions;
+DROP table keywords;
+
+
+create table writers(
+	username varchar(16) not null primary key,
+	password char(50) not null,
+	full_name text
+	);
+
+create table stories(
+	id int not null primary key auto_increment,
+	writer varchar(16) not null,
+	page varchar(16) not null,
+	headline text,
+	story_text text, 
+    picture text,
+	created int,
+	modified int,
+	published int
+	);
+create table pages(
+	code varchar(16) primary key,
+	description text
+);
+
+create table writer_permissions(
+	writer varchar(16) not null,
+	page varchar(16) not null,
+	primary key(writer,page)
+);
+
+create table keywords(
+	story int not null,
+	keyword varchar(32) not null,
+	weight int not null,
+	primary key(story,keyword)
+);   
+
 
 insert into writers (username, password, full_name)  
              values ('bob', SHA1('password'), 'Robert Bobbins');  
@@ -67,37 +109,3 @@ insert into stories
 values (7, 'bill', 'weather', 'Sun is shining, weather is sweet', 976451129, 976458734, 976458754,  
     'The forecast for this weekend is good, with long spells of sunshine predicted in most areas.  The high temperature will be 96F and no rain is expected until November', '');  
 
-
-create table writers(
-	username varchar(16) not null primary key,
-	password char(50) not null,
-	full_name text
-	);
-
-create table stories(
-	id int not null primary key auto_increment,
-	writer varchar(16) not null,
-	page varchar(16) not null,
-	headline text,
-	story_desc text,
-	created int,
-	modified int,
-	published int
-	);
-create table pages(
-	code varchar(16) primary key,
-	description text
-);
-
-create table writer_permissions(
-	writer varchar(16) not null,
-	page varchar(16) not null,
-	primary key(writer,page)
-);
-
-create table keywords(
-	story int not null,
-	keyword varchar(32) not null,
-	weight int not null,
-	primary key(story,keyword)
-);

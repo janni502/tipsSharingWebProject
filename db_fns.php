@@ -3,8 +3,8 @@
 
 function db_connect(){
 	try {
-		$result = mysqli_connect("localhost","root","","tipsWeb");
-		#mysqli_select_db('qdm162393256_db');
+		$result = mysqli_connect("127.0.0.1","root","981440","tips4u");
+		#mysqli_select_db('tips4u');
 	} catch (Exception $e) {
 		echo $e->message;
 		exit;
