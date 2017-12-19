@@ -10,6 +10,7 @@
 
 	if (login($username, $password)) {
 		$_SESSION['auth_user'] = $username;
+		
 		header('Location: '.$_SERVER['HTTP_REFERER']);
 	}else{
 		echo 'The password you entered is incorrect';

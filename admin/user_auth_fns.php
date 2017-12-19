@@ -1,4 +1,4 @@
- <?php
+<?php
 	function login($username, $password){
 		# check username and password with db
 		# if yes, return true, else return false
@@ -76,13 +76,4 @@
 			return 0;
 		}
 	}
-
-
-
-
-
-
-
-
-
 ?>

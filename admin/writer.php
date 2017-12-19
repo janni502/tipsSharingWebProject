@@ -39,14 +39,15 @@
     			echo '</td><td>';
     			echo $stories['page'];
     			echo '</td><td>';
-    			echo date('M d, H:i', $stories['created']);
+    			#echo date('M d, H:i', $stories['created']);
     			echo '</td><td>';
-    			echo date('M d, H:i', $stories['modified']);
+    			#echo date('M d, H:i', $stories['modified']);
     			echo '</td><td>';
 
     			if ($stories['published']) {
     				# code...
-    				echo '[Published '.date('M d, H:i', $stories['published']).']';
+                    echo 'time not available for now';
+    			#	echo '[Published '.date('M d, H:i', $stories['published']).']';
     			}else{
     				echo '[<a href="story.php?story='.$stories['id'].'">edit</a>]';
     				echo '[<a href="delete_story.php?story='.$stories['id'].'">delete</a>]';
